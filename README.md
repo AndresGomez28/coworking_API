@@ -22,14 +22,45 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Prerequisites
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Before getting started, make sure you have the following programs installed:
+
+- Node.js (>= 14.x.x)
+- npm (>= 6.x.x) or yarn (>= 1.x.x)
+- PostgreSQL
 
 ## Installation
 
+1. Clone the repository:
+
 ```bash
-$ npm install
+git https://github.com/AndresGomez28/coworking_API.git
+cd coworking_API
+```
+
+2. instll dependencies
+
+```bash
+npm install
+# or
+yarn install
+
+```
+
+3. Configure environment variables:
+Create a .env file (Set it whit your DB conection preferences) in the root of the project with the following content:
+
+```bash
+PORT=
+DB_HOST=
+DB_PORT=
+DB_USERNAME=
+DB_PASSWORD=''
+DB_DATABASE=
+DB_SYNCHRONIZE=
+
+
 ```
 
 ## Running the app
@@ -45,18 +76,9 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Documentation
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
+The API is documented using Swagger. You can access the documentation at http://localhost:3000/api.
 
 ## Support
 
