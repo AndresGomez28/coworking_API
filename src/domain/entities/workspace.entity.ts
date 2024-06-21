@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
 import { Room } from './room.entity';
+import { Reservation } from './reservation.entity';
 
 export enum WorkspaceStatus {
   AVAILABLE = 'Available',
@@ -30,4 +31,8 @@ export class Workspace {
   @ManyToOne(() => Room, room => room.workspaces)
   @JoinColumn({ name: 'room_id' })
   room: Room;
+
+  @OneToMany(() => Reservation, reservation => reservation.workspace)
+  reservations: Reservation[];
+
 }

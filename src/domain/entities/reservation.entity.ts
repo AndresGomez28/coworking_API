@@ -1,7 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { User } from './user.entity';
-import { Workspace } from './workspace.entity';
 import { Session } from './session.entity';
+import { Workspace } from './workspace.entity';
 
 @Entity({ schema: 'coworking', name: 'reservations' })
 export class Reservation {
@@ -12,20 +11,16 @@ export class Reservation {
   user_id: number;
 
   @Column()
-  workspace_id: number;
-
-  @Column()
   session_id: number;
 
-  @ManyToOne(() => User)
-  @JoinColumn({ name: 'user_id' })
-  user: User;
+  @Column()
+  workspace_id: number;
 
-  @ManyToOne(() => Workspace)
-  @JoinColumn({ name: 'workspace_id' })
-  workspace: Workspace;
-
-  @ManyToOne(() => Session)
+  @ManyToOne(() => Session, session => session.reservations)
   @JoinColumn({ name: 'session_id' })
   session: Session;
+
+  @ManyToOne(() => Workspace, workspace => workspace.reservations)
+  @JoinColumn({ name: 'workspace_id' })
+  workspace: Workspace;
 }

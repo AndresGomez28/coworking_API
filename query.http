@@ -1,0 +1,108 @@
+### Rooms/ Get All Rooms
+GET http://localhost:3001/rooms/findAll HTTP/1.1
+Content-Type: application/json
+
+{}
+
+### Rooms/ Create a Room
+POST http://localhost:3001/rooms/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "room_id": 201,
+    "name": "Room 201"
+}
+
+
+
+### Workspaces/ Get All Workspaces
+GET http://localhost:3001/workspaces/findAll HTTP/1.1
+Content-Type: application/json
+
+{}
+
+### Workspaces/ Create a Workspace
+POST http://localhost:3001/workspaces/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "workspace_id": 201,
+    "room_id": 201,
+    "row": 5,
+    "colum": 5,
+    "status": "Available"
+}
+
+### Workspaces/ Get All Available Workspaces
+GET http://localhost:3001/workspaces/findAvailableWorkspaces HTTP/1.1
+Content-Type: application/json
+
+{}
+
+### Workspaces/ Get All Occupied Workspaces
+GET http://localhost:3001/workspaces/findOccupiedWorkspaces HTTP/1.1
+Content-Type: application/json
+
+{}
+
+
+
+### Sessions/ Get All Sessions
+GET http://localhost:3001/sessions/findAll HTTP/1.1
+Content-Type: application/json
+
+{}
+
+### Sessions/ Create a Session
+POST http://localhost:3001/sessions/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "session_id": 201,
+    "name": "Session 201",
+    "start_time": "2024-06-21T14:00:00.000Z",
+    "end_time": "2024-06-22T16:23:59.000Z"
+}
+
+
+
+### Users/ Get All Users
+GET http://localhost:3001/users/findAll HTTP/1.1
+Content-Type: application/json
+
+{}
+
+### Users/ Create a User
+POST http://localhost:3001/users/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 201,
+    "username": "Example User",
+    "email": "example.user@example.com"
+}
+
+
+
+### Reservations/ Get All Reservation
+GET http://localhost:3001/reservations/findAll HTTP/1.1
+Content-Type: application/json
+
+{}
+
+### Rooms/ Create a Reservation
+POST http://localhost:3001/reservations/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "reservation_id": 201,
+    "user_id": 201,
+    "workspace_id": 201,
+    "session_id": 201
+}
+
+### Reservations/ Cancel Reservation by ID
+DELETE http://localhost:3001/reservations/cancelReservation/201 HTTP/1.1
+Content-Type: application/json
+
+{}
