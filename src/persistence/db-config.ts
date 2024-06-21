@@ -17,5 +17,5 @@ export const typeOrmConfig = (
     database: configService.get<string>('DB_DATABASE'),
     schema: 'coworking',
     entities: [Room, User, Session, Workspace, Reservation],
-    synchronize: true,
+    synchronize: false,
 });

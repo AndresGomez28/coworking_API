@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Reservation } from './reservation.entity';
 
 @Entity({ schema: 'coworking', name: 'sessions' })
 export class Session {
@@ -13,4 +14,9 @@ export class Session {
 
   @Column({ type: 'timestamp' })
   end_time: Date;
+
+  @OneToMany(() => Reservation, reservation => reservation.session)
+  reservations: Reservation[];
+
+
 }
